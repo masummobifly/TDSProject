@@ -1,37 +1,4 @@
-step 1:
-	install django-kombu
-	pip install django-kombu
-	
-step 2:
-	add "kombu.transport.django" in csm.base."INSTALLED_APPS"
-	
-step 3:
-	migrate project
-	python manage.py migrate
 
-step 4:
-	add generate_ledger_report task in bropex.tasks
-	
-step 4:
-	add periodic task in csm.celery
-	app.conf.update( 
-		CELERYBEAT_SCHEDULE={
-			'test_time_of':{
-			'task':'bropex.tasks.generate_ledger_report',
-			'schedule':datetime.timedelta(seconds=120),
-			},	
-		},
-	)
-step 4:
-	goto services and run folloing command for periodic task.
-	
-	1.path: defcom/services/
-	2.command:> nohup celery worker --loglevel=info -A csm --beat &
-	details of command:
-		1. celery worker: A Celery worker is just a program connecting to the broker to process messages
-		2. -A csm : run celery.py from services/csm
-		3. --beat = run periodic task from celery.py
-		
 		
 		
 		Django==1.7.1
