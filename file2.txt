@@ -31,3 +31,22 @@ step 4:
 		1. celery worker: A Celery worker is just a program connecting to the broker to process messages
 		2. -A csm : run celery.py from services/csm
 		3. --beat = run periodic task from celery.py
+		
+		
+		
+		Django==1.7.1
+yolk3k==0.8.6
+django-admin-bootstrapped
+django-extensions
+djangorestframework==2.4.4
+requests
+django-import-export
+MySQL-python
+raven==5.1.1
+django-celery
+supervisor
+django-ses
+psycopg2
+boto==2.21.2
+django-storages
+django-bootstrap3
